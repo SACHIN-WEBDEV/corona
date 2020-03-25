@@ -5,13 +5,13 @@ let covid = require("novelcovid");
 export default function Single() {
   // eslint-disable-next-line
   const [all, setall] = useState([]);
-  const coronaapi = async () => {
-    let data = await covid.getCountry();
-    setall(data);
-    console.log(all);
-  };
 
   useEffect(() => {
+    const coronaapi = async () => {
+      let data = await covid.getCountry();
+      setall(data);
+      console.log(all);
+    };
     coronaapi();
   }, [all]);
 

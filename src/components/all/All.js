@@ -16,23 +16,41 @@ export default function All() {
     setall(data);
     console.log(data);
   };
-
+  const total = all.length;
   return (
     <div>
       {" "}
+      <h6 className="lead">
+        <div className="display-5 text-center">
+          <h5>
+            Countries Effected :
+            <span className="display-4 text-danger">{total}</span>{" "}
+          </h5>{" "}
+        </div>
+      </h6>
       <div class="table-responsive-md">
         <table class="table table-borderless table-hover " id="table">
           <thead className="sticky-top bg-light ">
             <tr className="text-capitalize border-bottom   font-italic ">
               <th className="lead table-active text-center">country</th>
-              <th className="lead table-info text-center">cases</th>
-              <th className="lead table-warning text-center">active</th>
-              <th className="lead text-center">todayCases</th>
+              <th className="lead table-info  text-center">cases</th>
+              <th className="lead table-warning   d-none d-lg-table-cell text-center">
+                active
+              </th>
+              <th className="lead text-center  d-none d-lg-table-cell">
+                todayCases
+              </th>
               <th className="lead bg-danger text-light text-center">deaths</th>
-              <th className="lead table-danger  text-center">todayDeaths</th>
-              <th className="lead text-center table-primary">critical</th>
+              <th className="lead table-danger   d-none d-lg-table-cell text-center">
+                todayDeaths
+              </th>
+              <th className="lead text-center  d-none d-lg-table-cell table-primary">
+                critical
+              </th>
               <th className="lead  table-success text-center">recovered</th>
-              <th className="lead text-center">casesPerOneMillion</th>
+              <th className="lead text-center  d-none d-lg-table-cell">
+                casesPerOneMillion
+              </th>
             </tr>
           </thead>
           {all.map(item => (
@@ -40,7 +58,9 @@ export default function All() {
               <tr className="text-center">
                 <td className="mx-auto table-active lead text-center">
                   <div className="row mx-auto">
-                    <div className="col p-1">{item.country}</div>
+                    <div className="col p-1">
+                      <strong>{item.country}</strong>
+                    </div>
                     <div className="col p-1">
                       <img
                         src={
@@ -57,14 +77,22 @@ export default function All() {
                   </div>
                 </td>
                 <td className="table-info">{item.cases}</td>
-                <td className="table-warning">{item.active}</td>
-                <td>{item.todayCases}</td>
-                <td class="bg-danger text-light">{item.deaths}</td>
-                <td className="table-danger">{item.todayDeaths}</td>
-                <td className="table-primary">{item.critical}</td>
+                <td className="table-warning d-none d-lg-table-cell">
+                  {item.active}
+                </td>
+                <td className="d-none d-lg-table-cell">{item.todayCases}</td>
+                <td className="bg-danger text-light">{item.deaths}</td>
+                <td className="table-danger d-none d-lg-table-cell">
+                  {item.todayDeaths}
+                </td>
+                <td className="table-primary d-none d-lg-table-cell">
+                  {item.critical}
+                </td>
                 <td className="table-success">{item.recovered}</td>
 
-                <td>{item.casesPerOneMillion}</td>
+                <td className="d-none d-lg-table-cell">
+                  {item.casesPerOneMillion}
+                </td>
               </tr>
             </tbody>
           ))}

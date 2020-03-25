@@ -53,11 +53,11 @@ export default function Main() {
           <tr>
             <td>
               {" "}
-              <span className="p-2 mx-0 bg-light mr-1 rounded-circle d-inline-block"></span>{" "}
+              <span className="p-2 mx-0 bg-light mr-1 rounded-circle d-none d-inline-block"></span>{" "}
             </td>
             <td>Updated On</td>
             <td>
-              <Moment interval={1000} format="DD/MM/YYYY HH:mm" withTitle>
+              <Moment interval={1000} format="DD/MM/YYYY " withTitle>
                 {main.updated}
               </Moment>
             </td>
