@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 You can check live version of webapp here👇👇👇
-### `<a href="https://corona-d7fcb.firebaseapp.com/">`Corona`</a>`
+### <a href="https://corona-d7fcb.firebaseapp.com/">`Corona`</a>
 
 ## Available Scripts
 
